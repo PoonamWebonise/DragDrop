@@ -1,0 +1,16 @@
+.table1  td {
+	max-width: 125px;
+	max-height: 150px;
+}
+.table1 td img {
+	width: 125px;
+}
+.dropper{
+	width : 600px;
+	height : 600px;
+	border : 1px solid #aaaaaa;
+	position: relative;
+}
+.dropper img {
+	width: 125px;
+}
