@@ -1,0 +1,21 @@
+{
+  "name": "drag-drop-housefull",
+  "version": "0.0.0",
+  "authors": [
+    "Poonam Patare <poonam.patare@weboniselab.com>"
+  ],
+  "description": "drag and drop feature for housefull",
+  "main": "drag_drop.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3.13",
+    "angular-dragdrop": "1.0.11"
+  }
+}

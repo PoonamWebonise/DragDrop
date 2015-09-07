@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag & Drop with AngularJS</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+        <link href="http://code.jquery.com/ui/1.8.24/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="resources/js/drag_drop.js"></script>
+    </head>
+    <body ng-app="dragDrop" ng-controller="DragDropController">
+
+        <div id="dvDest">
+            Drop here
+        </div>
+
+
+        <div id="dvSource">
+            <img ng-repeat="img in data.images" alt="{{src}}" src="{{img}}">
+        </div>
+    </body>
+</html>
