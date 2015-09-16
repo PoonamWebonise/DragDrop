@@ -7,17 +7,40 @@
         <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
         <link href="http://code.jquery.com/ui/1.8.24/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
         <script src="bower_components/angular/angular.js"></script>
-        <script src="resources/js/drag_drop.js"></script>
+        <script src="resources/js/dragDrop.js"></script>
     </head>
-    <body ng-app="dragDrop" ng-controller="DragDropController">
+    <body ng-app="dragDrop">
+        <div class = "selectroom"  ng-controller="SelectRoomController" ng-init = 'selected = {}'>
+            <label >Select Room Type: </label>
+            <select 
+                    ng-options="room.Type for room in rooms"
+                    ng-model="rooms.selectedOption">
+            </select>
+            <div>
+                <div ng-repeat="room in rooms|filter:{Type:rooms.selectedOption.Type} ">
+                    <img  ng-repeat="images in room.images" alt="{{src}}" src="{{images}}" ng-click="changeBackground($event)">
+                </div>
+            </div>
+        </div>
 
         <div id="dvDest">
             Drop here
         </div>
 
-
-        <div id="dvSource">
-            <img ng-repeat="img in data.images" alt="{{src}}" src="{{img}}">
+        <div id="dvSource" ng-controller="DragDropController" ng-init = 'selected = {}'>
+            <label >Select Product Type: </label> 
+            <select 
+                    ng-options="product.Type for product in data"
+                    ng-model="data.selectedOption">
+            </select>
+             <label>Search: <input ng-model="searchText"></label>
+            <div>
+                <div ng-repeat="product in data | filter: searchText | filter:{Type:data.selectedOption.Type} "  >
+                    <img ng-repeat="img in product.products" alt="{{src}}" src="{{img}}">
+                </div>
+            </div>
+            
         </div>
+
     </body>
 </html>
