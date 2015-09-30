@@ -22,11 +22,9 @@
                 </div>
             </div>
         </div>
-
         <div id="dvDest">
             Drop here
         </div>
-
         <div id="dvSource" ng-controller="DragDropController" ng-init = 'selected = {}'>
             <label >Select Product Type: </label> 
             <select 
@@ -36,11 +34,9 @@
              <label>Search: <input ng-model="searchText"></label>
             <div>
                 <div ng-repeat="product in data | filter: searchText | filter:{Type:data.selectedOption.Type} "  >
-                    <img ng-repeat="img in product.products" alt="{{src}}" src="{{img}}">
+                        <img id="resize" ng-repeat="img in product.products" alt="{{src}}" src="{{img}}">
                 </div>
-            </div>
-            
+            </div>            
         </div>
-
     </body>
 </html>

@@ -52,7 +52,10 @@ function dragDropController($scope, $timeout) {
 		        }
 		    });
 
-			$("#dvDest img").draggable({});
+			$("#dvDest img").draggable({
+				drag: function (event, ui) {
+		        },
+			});
 
 			$("#dvSource").droppable({
 				drop: function (event, ui) {
@@ -64,7 +67,18 @@ function dragDropController($scope, $timeout) {
 			    } 
 			});
 
-			$("#dvDest").droppable({});
+			$("#dvDest").droppable({
+				drop: function (event, ui) {
+					var element = window.event.target;
+					$(element).resizable({
+						start: function( event, ui ) {
+						},
+						stop: function( event, ui ) {
+							$(element).resizable("destroy");
+						}
+					});
+			    } 
+			});
 		},1000);
 	};
 
@@ -73,7 +87,6 @@ function dragDropController($scope, $timeout) {
 	},true);
 
 }
-
 myApp.controller('SelectRoomController', ['$scope', selectRoomController]);
 
 function selectRoomController($scope){
